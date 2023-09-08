@@ -1,0 +1,36 @@
+name: "sync OpenAi account"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * 0'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.repository == 'xiaoxuan6/OpenAI-free-accounts'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: sync
+        env:
+          ACCOUNT_URL: ${{ secrets.ACCOUNT_URL }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r .github/python/requirements.txt
+          python .github/python/bot.py --url=$ACCOUNT_URL
+      - name: "Commit files"
+        run: |
+          git config --local user.email "1527736751@qq.com"
+          git config --local user.name "xiaoxuan6"
+          git add -A
+          git commit --amend -m "fix: Update README.md" || exit 0
+      - name: "Push changes"
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
