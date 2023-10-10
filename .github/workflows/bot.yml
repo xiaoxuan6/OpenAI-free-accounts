@@ -28,7 +28,7 @@ jobs:
           git config --local user.email "1527736751@qq.com"
           git config --local user.name "xiaoxuan6"
           git add -A
-          git commit --amend -m "fix: Update README.md" || exit 0
+          git commit -m "fix: Update README.md" || exit 0
       - name: "Push changes"
         uses: ad-m/github-push-action@master
         with:

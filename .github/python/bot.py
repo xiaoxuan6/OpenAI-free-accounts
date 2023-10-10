@@ -23,15 +23,20 @@ def main(url: str):
 
     items = []
     for div in divs:
-        account = div.find_element_by_xpath('.//button[1]/span').text
-        passwd = div.find_element_by_xpath('.//button[2]/span').text
+        try:
+            account = div.find_element_by_xpath('.//button[1]/span').text
+            passwd = div.find_element_by_xpath('.//button[2]/span').text
+        except Exception as e:
+            print(e)
+            account = div.find_element_by_xpath('./div/button[1]/span').text
+            passwd = div.find_element_by_xpath('./div/button[2]/span').text
+
         if account:
             items.append(account + ',' + passwd)
 
     with open(os.getcwd() + "/README.md", encoding="utf-8", mode='w') as f:
         f.write("# 免费 OpenAI 账号<br>\n")
         f.write("## 官方登录地址：https://chat.openai.com/\n如果太多人共用账号登录失败，请换账号重新登录\n\n")
-
         f.write("| --- | --- | --- |\n")
         f.write("|:--- |:--- |:--- |\n")
 
