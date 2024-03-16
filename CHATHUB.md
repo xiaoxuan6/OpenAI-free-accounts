@@ -7,9 +7,6 @@
 |[https://lbb.ai](https://lbb.ai)| 免费 |[https://c.binjie.fun/](https://c.binjie.fun/)| 免费 || 免费 |
 |[https://chat.ylokh.xyz/](https://chat.ylokh.xyz/)| 免费 |[https://n7.gpt03.xyz/?chat=1](https://n7.gpt03.xyz/?chat=1)| 免费 || 免费 |
 
-# 白嫖
-[包含一些免费的共享ChatGPT账号](https://chat-shared2.zhile.io/shared.html)
-
 # 捐赠
 
 如果此项目对您有帮助，还希望您捐赠支持，让我能好好的一直坚持下去。金额不在于多少，一份心意就好！在此感谢所有的捐赠者，你们的鼓励是我最大的动力！
