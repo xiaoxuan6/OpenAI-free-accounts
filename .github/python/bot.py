@@ -61,4 +61,5 @@ if __name__ == '__main__':
     arg.add_argument('--url', type=str)
     args = arg.parse_args()
 
+    print(args.url)
     main(args.url)
